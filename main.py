@@ -1,5 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import schedule
 import time
+from datetime import datetime
+from utils.telegram.send_message import send_message_telegram, text_success_output
 
 users = [
     {
@@ -26,6 +31,15 @@ users = [
         "identification_card": "121914018",
         "phones_number_to_buy": ["0346078178", "0965558229"]
     }
+]
+
+usersTest = [
+    {
+        "name": "Anh Toan",
+        "phone": "0923242232",
+        "identification_card": "024094006585",
+        "phones_number_to_buy": ["0869489304", "0983136188"]
+    },
 ]
 
 
@@ -55,10 +69,13 @@ def buy_phone_number(name, phone, identification_card, phone_number_to_buy):
 
     response = requests.request("POST", url, headers=headers, data=payload)
 
-    print(response.text)
+    if 'Đặt hàng thành công' in response.text:
+        print("Successfully! " + datetime.today().strftime('%Y-%m-%d %H:%M:%S'))
+        send_message_telegram(text_success_output(name, phone_number_to_buy))
 
 
 def job():
+    print("Start job: " + datetime.today().strftime('%Y-%m-%d %H:%M:%S'))
     for user in users:
         name = user["name"]
         phone = user["phone"]
