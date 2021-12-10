@@ -1,0 +1,7 @@
+Flask-JWT-Extended
+Flask-RESTful
+flask_cors
+requests
+python-decouple
+Flask-SQLAlchemy
+schedule
