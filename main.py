@@ -27,8 +27,8 @@ users = [
     },
     {
         "name": "Anh Chuong",
-        "phone": "0965753898",
-        "identification_card": "121914018",
+        "phone": "0983944999",
+        "identification_card": "122168763",
         "phones_number_to_buy": ["0346078178", "0965558229"]
     }
 ]
@@ -69,8 +69,8 @@ def buy_phone_number(name, phone, identification_card, phone_number_to_buy):
 
     response = requests.request("POST", url, headers=headers, data=payload)
 
+    # print("phone_number_to_buy! " + phone_number_to_buy)
     if 'Đặt hàng thành công' in response.text:
-        print("Successfully! " + datetime.today().strftime('%Y-%m-%d %H:%M:%S'))
         send_message_telegram(text_success_output(name, phone_number_to_buy))
 
 
