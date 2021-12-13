@@ -35,7 +35,7 @@ users = [
         "name": "Anh TOAN",
         "phone": "0983944323",
         "identification_card": "122168235",
-        "phones_number_to_buy": ["0335609382", "0338045713"]
+        "phones_number_to_buy": ["0346030754", "0338045713"]
     }
 ]
 
