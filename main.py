@@ -30,6 +30,12 @@ users = [
         "phone": "0983944999",
         "identification_card": "122168763",
         "phones_number_to_buy": ["0346078178", "0965558229"]
+    },
+    {
+        "name": "Anh TOAN",
+        "phone": "0983944321",
+        "identification_card": "122168233",
+        "phones_number_to_buy": ["0869610574"]
     }
 ]
 
